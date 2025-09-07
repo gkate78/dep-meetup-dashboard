@@ -1,17 +1,25 @@
 # DEP Meetup Dashboard
 
 import streamlit as st
+import json
 import pandas as pd
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2.service_account import Credentials
 import plotly.express as px
 import base64
 
 # Setup credentials and load data
 @st.cache_data
+
+# Define scope
 def load_data():
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name("creds/dep-participation-dashboard-0563febff8de.json", scope)
+
+    # Load credentials from Streamlit secrets
+    creds_dict = st.secrets["gcp_service_account"]
+    creds = Credentials.from_service_account_info(creds_dict, scopes=scope)
+
+    # Authorize gspread client    
     client = gspread.authorize(creds)
 
     spreadsheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1nhUmHPB2w45PCgehrsDuC0hscDc-hEPxyIlP6Sr1ndc/edit")
