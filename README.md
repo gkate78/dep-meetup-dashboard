@@ -35,9 +35,13 @@ It provides organizers and volunteers with insights into:
 ## 📂 Project Structure
 
 DEP-Meetup-Dashboard/
+
 │── assets/ # Static assets (e.g., dep_logo.png)
+
 │── app.py # Main Streamlit app
+
 │── requirements.txt # Python dependencies
+
 │── README.md # Project documentation
 
 
