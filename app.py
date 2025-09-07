@@ -176,7 +176,12 @@ if sort_option in filtered_df.columns:
 
 
 st.subheader("Filtered Table")
-st.dataframe(filtered_df)
+# Copy and reset index to start at 1
+filtered_df_display = filtered_df.copy()
+filtered_df_display.index = range(1, len(filtered_df_display) + 1)
+
+# Display the filtered DataFrame
+st.dataframe(filtered_df_display, use_container_width=True)
 
 # Export Option
 st.subheader("Export Filtered Data")
