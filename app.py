@@ -102,7 +102,7 @@ st.markdown(
         .metric-card {{
             flex: 1 1 auto;
             max-width: 300px;
-            background-color: #f1f3f6;
+            background-color: inherit;
             border-radius: 15px;
             padding: 20px;
             text-align: center;
@@ -115,7 +115,7 @@ st.markdown(
         .metric-card h2 {{
             margin: 0;
             font-size: 2rem;
-            color: #2b2b2b;
+            color: inherit;
         }}
         @media (max-width: 600px) {{
             .metric-card {{
@@ -210,7 +210,7 @@ st.markdown(
         .filter-metric-card {{
             flex: 1 1 auto;
             max-width: 120px;
-            background-color: #ffffff;
+            background-color: #inherit;
             border-radius: 12px;
             padding: 15px;
             text-align: left;
@@ -223,7 +223,7 @@ st.markdown(
         .filter-metric-card h2 {{
             margin: 0;
             font-size: 1.8rem;
-            color: #333;
+            color: inherit;
         }}
         @media (max-width: auto) {{
             .filter-metric-card {{
