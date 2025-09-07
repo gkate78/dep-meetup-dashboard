@@ -1,77 +1,75 @@
-DEP Meetup Dashboard
+# DEP Meetup Dashboard
 
-DEP Meetup Dashboard is a Streamlit web app built for Data Engineering Pilipinas (DEP) to visualize and explore community event data collected from Google Forms.
+DEP Meetup Dashboard is a **Streamlit web app** built for **Data Engineering Pilipinas (DEP)** to visualize and explore community event data collected from Google Forms.  
 
 It provides organizers and volunteers with insights into:
 
-Attendance trends
+- Attendance trends  
+- Demographics (gender, role, location)  
+- First-time attendees  
+- Community participation preferences  
+- "Humans of DEP" interest  
 
-Demographics (gender, role, location)
+---
 
-First-time attendees
+## Features
 
-Community participation preferences
+- **Interactive Dashboard** – Filter by gender, role, province, and city  
+- **Summary Metrics** – View total responses, first-time attendees, and more  
+- **Visual Analytics** – Pie charts and bar charts for demographics & preferences  
+- **Export Option** – Download filtered data as CSV for deeper analysis  
+- **Privacy First** – Automatically removes PII (emails, names, contact numbers)  
 
-"Humans of DEP" interest
+---
 
-Features
+## 🛠️ Tech Stack
 
-Interactive Dashboard: Filters by gender, role, province, and city.
+- [Streamlit](https://streamlit.io/) – Web app framework  
+- [Google Sheets API (gspread)](https://docs.gspread.org/) – Data source integration  
+- [Pandas](https://pandas.pydata.org/) – Data cleaning & transformation  
+- [Plotly Express](https://plotly.com/python/plotly-express/) – Interactive visualizations  
+- [Google Cloud Service Account](https://cloud.google.com/iam/docs/service-accounts) – Authentication  
 
-Summary Metrics: Total responses, first-time attendees, and more.
+---
 
-Visual Analytics: Pie charts and bar charts for demographics and participation preferences.
+## 📂 Project Structure
 
-Export Option: Download filtered data as CSV for further analysis.
-
-Privacy First: Automatically removes personally identifiable information (PII) such as emails, names, and contact numbers.
-
-Tech Stack
-
-Streamlit
- – Web app framework
-
-Google Sheets API (gspread)
- – Data source integration
-
-Pandas
- – Data cleaning and transformation
-
-Plotly Express
- – Interactive visualizations
-
-Google Cloud Service Account
- – Authentication
-
-📂 Project Structure
 DEP-Meetup-Dashboard/
-│── assets/               # Static assets (e.g., dep_logo.png)
-│── app.py                # Main Streamlit app
-│── requirements.txt      # Python dependencies
-│── README.md             # Project documentation
+│── assets/ # Static assets (e.g., dep_logo.png)
+│── app.py # Main Streamlit app
+│── requirements.txt # Python dependencies
+│── README.md # Project documentation
 
-⚙️ Setup Instructions
-1. Clone the Repository
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repository
+```bash
 git clone https://github.com/<your-username>/DEP-Meetup-Dashboard.git
 cd DEP-Meetup-Dashboard
 
 2. Create & Activate Virtual Environment
+# Mac/Linux
 python -m venv .venv
-source .venv/bin/activate   # Mac/Linux
-.venv\Scripts\activate      # Windows
+source .venv/bin/activate  
+
+# Windows
+python -m venv .venv
+.venv\Scripts\activate
 
 3. Install Dependencies
 pip install -r requirements.txt
 
 4. Configure Google Service Account
 
-Create a Google Cloud Project and enable Google Sheets API + Google Drive API.
-
+Create a Google Cloud Project and enable:
+Google Sheets API
+Google Drive API
 Generate a Service Account Key (JSON file).
-
-Add the service account email to your Google Sheet with Viewer access.
-
-In Streamlit, add the key to your secrets file:
+Share your Google Sheet with the service account email (Viewer access).
+Add credentials to Streamlit secrets file:
 
 # .streamlit/secrets.toml
 [gcp_service_account]
@@ -89,12 +87,11 @@ Replace the Google Sheet URL in app.py with your own survey sheet.
 streamlit run app.py
 
 
-Then open the local URL (default: http://localhost:8501) in your browser.
+Open the local app at http://localhost:8501
+.
 
 📸 Screenshots
-
-![alt text](image.png)
-
+![Dashboard Screenshot](assets/image.png)
 
 👥 About
 
@@ -102,4 +99,5 @@ This project is created by Katherine Bulac for the Data Engineering Pilipinas (D
 
 📜 License
 
-MIT License – free to use and modify.
+MIT License – Free to use and modify.
+
