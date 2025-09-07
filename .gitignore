@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Environments
+.venv/
+env/
+venv/
+*.env
+
+# Streamlit secrets
+creds/
+*.json
+
+# Jupyter extensions
+share/
+
+# VSCode
+.vscode/
