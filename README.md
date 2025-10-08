@@ -95,7 +95,7 @@ Open the local app at http://localhost:8501
 .
 
 📸 Screenshots
-![Dashboard Screenshot](assets/image.png)
+![Dashboard Screenshot](assets/Dep_Meetup_Summary.png)
 
 👥 About
 
